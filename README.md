@@ -1,18 +1,25 @@
-# Age-Calculation-Program
-​Take age or year as an input from the user and tell them when they will turn 100 years old. Don’t use any type of module like datetime or dateutils. They can then optionally provide a year and your program must tell their age in that particular year. 
-The purpose of the program is to calculate the year when a person will turn 100 based on their current age or year of birth. It allows users to  input a specific future year and calculates the age they would be in that year. The program is designed to handle various types of errors and cases, ensuring a robust and user-friendly experience.
-You should be handling all sorts of error:
-You are not yet born
-You seem to be the oldest person alive
-You can also handle any other error if possible!
-
-Steps : 
-Step 1: Take the user's age as input, handling the case where a non-integer is entered.
-Step 2: Check for invalid age values (negative or extremely high).
-Step 3: Calculate the year when the person will turn 100.
-Step 4: Display the calculated year.
-Step 5: Optionally, allow the user to input a specific year.
-Step 6: Check for errors related to the target year (must be in the future).
-Step 7: Calculate and display the age in the provided year.
-Feel free to run this Python script and test it with different inputs to see how it handles various scenarios and errors.
-
+main_input = input("Enter 1 if you want to check current data:\nEnter 2 if you want to see your future age:\n")
+if main_input == '1':
+    user_input = input(("Enter your Age or Year of birth: "))
+    user_input = int(user_input)
+    if user_input > 90 and user_input < 110:
+        print(f"Your Year of birth is {user_input} You are oldest person alive")
+        print(f"Your Year of birth is {user_input} You are oldest person alive")
+    elif user_input <= 90:
+        print(f"Your Age is {user_input} and you will turn 100 in {100-user_input} years.")
+    elif user_input > 2022:
+        print(f"Your Year of birth is {user_input} You are not born yet!")
+    elif user_input > 1940:
+        print(f"Your Year of birth is {user_input} and you will turn 100 years in {100-(2022-user_input)} years")
+    else:
+        print(f"This is not a valid age or year of birth")
+elif main_input == '2':
+    user_input2 = input(("Enter your Year of birth: "))
+    user_input2future = input(("Enter future Year of birth: "))
+    user_input2 = int(user_input2)
+    user_input2future = int(user_input2future)
+    if user_input2 > 2022:
+        print(f"Your Year of birth is {user_input2} You are not born yet!")
+    elif user_input2 < 1940:
+        print(f"Your Year of birth is {user_input2} You are oldest person alive")
+    print(f"Your age is {(2022-user_input2)} and your age in year {(user_input2future)} will be {(user_input2future)-(user_input2)}")
